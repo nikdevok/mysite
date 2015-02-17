@@ -7,9 +7,9 @@ FactoryGirl.define do
   end
 
   factory :user, class: User do
-    login "admin"
+    login "user"
     password "11111111"
-    nickname "admin"
+    nickname "user"
     roles ["user"]
   end
 end
