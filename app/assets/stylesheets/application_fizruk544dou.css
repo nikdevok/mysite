@@ -2,7 +2,7 @@
 
  *= require fizruk544dou/all
  *= require froala_editor.min.css
- *= require froala_page.min.css
+ *= require froala_content.min.css
  *= require font-awesome
  *= require fizruk544dou/my
  *= require fizruk544dou/styles
@@ -55,13 +55,13 @@
   margin-bottom: 20px;
 
   background-color: #f0f0f0;
-  
-  
+
+
 }
 
 #error_explanation ul li {
     font-size: 12px;
-    
+
     list-style: square;
   }
 

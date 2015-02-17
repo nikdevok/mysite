@@ -23,6 +23,11 @@ Vospitatel::Application.configure do
   config.assets.precompile += %w( application_dou_star.css )
   config.assets.precompile += %w( application_fizruk544dou.css )
 
+  config.eager_load = true
+
+  # Compress JavaScripts and CSS
+  config.assets.js_compressor = :uglifier
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 

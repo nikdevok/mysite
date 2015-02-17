@@ -1,4 +1,4 @@
-Vospitatel::Application.routes.draw do
+Rails.application.routes.draw do
 
   resources :method_files
 
@@ -6,12 +6,12 @@ Vospitatel::Application.routes.draw do
 
   resources :static_pages
 
-  
+
 
   resources :comments
 
   resources :static_pages
-  
+
 
 
   devise_for :users, controllers: { registrations: 'registrations' }
@@ -36,12 +36,11 @@ Vospitatel::Application.routes.draw do
 
       resources :images
   end
-  
+
 
   #mount Ckeditor::Engine => "/ckeditor"
 
-  match 'contact' => 'contact#new', :as => 'contact', :via => :get
-  match 'contact' => 'contact#create', :as => 'contact', :via => :post
+  resource :contact, controller: :contact
 
   get 'about_me' => "static_pages#about_me"
   get 'shedule_page' => "static_pages#shedule_page"
@@ -100,7 +99,7 @@ Vospitatel::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'static_pages#main_page'
+  root 'static_pages#main_page'
 
 
   # See how all your routes lay out with "rake routes"

@@ -1,80 +1,99 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
+# Application
+gem 'rails', '4.1.4'
+gem 'jbuilder', '~> 2.0'
+gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'spring',        group: :development
+gem "therubyracer"
+gem 'net-ssh'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+# CSS
+gem 'sass-rails', '~> 4.0.3'
+gem "less-rails"
+
+# Javascript
+gem 'uglifier', '>= 1.3.0'
+gem 'turbolinks'
 
 
+# Jquery
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'jquery-tablesorter'
 
-gem 'bootstrap-sass', '~> 3.2.0'
-#gem 'ckeditor'
+# Coffee
+gem 'coffee-rails', '~> 4.0.0'
+
+# Deploy
+gem 'unicorn'
+gem 'capistrano', '~> 2.15.5'
+gem 'capistrano-rails', group: :development
+gem 'capistrano-rbenv', group: :development
+
+
+# Views
+gem 'breadcrumbs_on_rails'
+gem 'rails4-autocomplete'
+gem 'slim-rails'
+gem 'haml-rails'
+
+# Bootstrap
+gem 'twitter-bootstrap-rails'
+gem 'bootstrap-glyphicons'
+gem 'devise-bootstrap-views'
+
+# Database
+gem 'pg'
+
+# Paginate
+gem 'kaminari'
+
+# Debug
+gem 'quiet_assets'
+gem 'byebug'
+gem 'bullet', group: :development
+
+
 gem "wysiwyg-rails"
 gem "font-awesome-rails"
 gem 'paperclip'
 gem 'fancybox-rails'
 gem 'autoprefixer-rails'
-
-
+gem 'rails_12factor', group: :production
+gem 'cancan'
 gem 'devise'
 
-gem 'simple_captcha', :git => 'git://github.com/rubymaniac/simple-captcha'
+gem "simple_form"
+
+gem 'simple_captcha', :git => 'git://github.com/pludoni/simple-captcha'
 # Gems used only for assets and not required
 # in production environments by default.gem 'simple_captcha', :git => 'git://github.com/rubymaniac/simple-captcha'
 
-group :assets do
-  gem 'sass-rails', '>= 3.2'
-  gem 'coffee-rails', '~> 3.2.1'
+gem 'protected_attributes'
+gem 'rails-observers'
+gem 'actionpack-page_caching'
+gem 'actionpack-action_caching'
+gem 'activerecord-deprecated_finders'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-   #gem 'therubyracer', :platforms => :ruby
+# Search
+# gem 'ransack'
 
-  gem 'uglifier', '>= 1.0.3'
-end
-
-gem 'jquery-rails', '3.1.1'
-
-gem 'quiet_assets', group: :development
-
-gem 'cancan'
-gem "twitter-bootstrap-rails"
-gem 'devise-bootstrap-views'
-
-gem 'rails_12factor', group: :production
-
-#gem 'sqlite3'
-gem "slim-rails"
-gem "simple_form"
-gem "strong_parameters"
-gem 'pg'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-gem 'unicorn'
-
-# Deploy with Capistrano
-#gem 'capistrano'
-#gem 'rvm-capistrano'
-
-# To use debugger
-# gem 'debugger'
-
-#Testing
-gem "rspec-rails", :group => [:test, :development]
-group :test do
-  gem "factory_girl_rails"
-  gem "capybara"
-  gem "guard-rspec"
-end
+#Tests
+# Tests
+# gem 'rspec-rails', group: [:development, :test]
+# gem 'factory_girl_rails'#, group: [:development, :test]
+# gem 'capybara', group: :test
+# gem 'launchy', group: :test
+# gem 'spring-commands-rspec', group: :test
+# gem 'fivemat', group: :test
+# gem 'poltergeist', group: :test
+# gem 'vcr',                  group: :test
+# gem 'webmock', '~> 1.20.4', group: :test
+# gem 'database_cleaner', group: :test
+# gem 'ffaker'
+# gem 'capybara-screenshot'
+# gem 'selenium-webdriver'
 
 
-group :development, :test do
-  # ...
-  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
-  gem 'guard-livereload'
-end

@@ -13,7 +13,7 @@
 class ApplicationController < ActionController::Base
  	protect_from_forgery
 
-  include SimpleCaptcha::ControllerHelpers
+  #include SimpleCaptcha::ControllerHelpers
 
   layout "application_fizruk544dou"
   #layout "application_dou_star"
