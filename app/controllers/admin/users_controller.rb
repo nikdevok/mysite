@@ -17,12 +17,12 @@ class Admin::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     flash[:notice] = "Пользователь зарегистрирован" if @user.save
-    respond_with(:admin, @user)
+    respond_with(:admin, @user, location: admin_users_path)
   end
 
   def update
     flash[:notice] = "Данные пользователя изменены" if @user.update(user_params)
-    respond_with(:admin, @user)
+    respond_with(:admin, @user, location: admin_users_path)
   end
 
   def destroy
