@@ -11,7 +11,6 @@ describe 'Static pages', type: :feature do
 
   scenario "menu links" do
     visit root_path
-    byebug
   end
 
   scenario "main page" do
