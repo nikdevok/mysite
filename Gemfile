@@ -81,19 +81,18 @@ gem 'activerecord-deprecated_finders'
 # gem 'ransack'
 
 #Tests
-# Tests
-# gem 'rspec-rails', group: [:development, :test]
-# gem 'factory_girl_rails'#, group: [:development, :test]
-# gem 'capybara', group: :test
-# gem 'launchy', group: :test
-# gem 'spring-commands-rspec', group: :test
-# gem 'fivemat', group: :test
-# gem 'poltergeist', group: :test
-# gem 'vcr',                  group: :test
-# gem 'webmock', '~> 1.20.4', group: :test
-# gem 'database_cleaner', group: :test
-# gem 'ffaker'
-# gem 'capybara-screenshot'
-# gem 'selenium-webdriver'
+gem 'rspec-rails', group: [:development, :test]
+gem 'factory_girl_rails'#, group: [:development, :test]
+gem 'capybara', group: :test
+gem 'launchy', group: :test
+gem 'spring-commands-rspec', group: :test
+gem 'fivemat', group: :test
+gem 'poltergeist', group: :test
+gem 'vcr',                  group: :test
+gem 'webmock', '~> 1.20.4', group: :test
+gem 'database_cleaner', group: :test
+gem 'ffaker'
+gem 'capybara-screenshot'
+gem 'selenium-webdriver'
 
 

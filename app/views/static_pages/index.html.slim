@@ -1,0 +1,17 @@
+table.table.table-striped.table-hover
+  thead
+    tr
+      th Название
+      th Название меню
+      th Тип
+      th Содержание
+      th
+  tbody
+    -@static_pages.each do |s|
+      tr
+        td = s.title
+        td = s.menu_title
+        td = s.page_type
+        td
+          p = s.body
+        td = link_to 'Показать', s

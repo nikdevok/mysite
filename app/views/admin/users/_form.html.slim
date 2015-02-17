@@ -1,4 +1,4 @@
-=simple_form_for @user, url: (@user.new_record? ? admin_users_path : admin_user_path(@user)), class: "form-horizontal", role: "form" do |f|
+=simple_form_for [:admin, @user], class: "form-horizontal", role: "form" do |f|
   =f.error_notification
   .form-group
     =f.input :login

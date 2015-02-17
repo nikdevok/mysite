@@ -1,9 +1,10 @@
-class Ability 
+class Ability
 	include CanCan::Ability
 
 	def initialize(user)
 		unless user
 			can :read, :all
+			cannot :index, StaticPage
 			return
 		end
 		if user.role? :admin
@@ -12,7 +13,7 @@ class Ability
 			can :read, :all, :except => [User]
 			can :create, Comment, user_id: user.id
       can :edit, User, id: user.id
-			
+
 			#can :update, Comment.where(user_id: user.id)
 		end
 	end

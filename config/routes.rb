@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
   resources :static_pages
 
+  get 'main', to: "static_pages#show", id: :main
+  get 'about', to: "static_pages#show", id: :about_me
+  get 'schedules', to: "static_pages#show", id: :schedules
+
 
 
   devise_for :users, controllers: { registrations: 'registrations' }
@@ -40,16 +44,16 @@ Rails.application.routes.draw do
 
   #mount Ckeditor::Engine => "/ckeditor"
 
-  resource :contact, controller: :contact
+  resource :contact, controller: :contact do
+    get :new, on: :collection
+    post :create, on: :collection
+  end
 
-  get 'about_me' => "static_pages#about_me"
-  get 'shedule_page' => "static_pages#shedule_page"
   post 'upload_image' => "uploader#upload"
   post 'delete_image' => "uploader#delete"
 
   resources :news
   resources :consultations
-  resources :about_me
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -99,7 +103,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root 'static_pages#main_page'
+  root 'static_pages#show', id: :main
 
 
   # See how all your routes lay out with "rake routes"

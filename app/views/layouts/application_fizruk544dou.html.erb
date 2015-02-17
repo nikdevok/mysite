@@ -7,7 +7,7 @@
 
   		<%= csrf_meta_tags %>
         <%= javascript_tag "var AUTH_TOKEN = '#{form_authenticity_token}';" if protect_against_forgery? %>
-		
+
 	</head>
 	<body>
 	<div id="container">
@@ -68,8 +68,8 @@
 		  	<div id="extra">
 		  	  <div id="sova">&nbsp;</div>
               <ul id = "navbar">
-                <li class = "top"><%= link_to "Главная", root_path, class: "menu" %></li>
-                <li><%= link_to "Давайте познакомимся", about_me_index_path, class: "menu" %></li>
+                <li class = "top"><%= link_to "Главная", root_url, class: "menu" %></li>
+                <li><%= link_to "Давайте познакомимся", about_url, class: "menu" %></li>
                 <li><%= link_to "Новости", news_index_path, class: "menu" %></li>
                 <li><%= link_to "Достижения", achievements_path, class: "menu" %></li>
                 <li><%= link_to "Методическая копилка", method_files_path, class: "menu" %></li>
@@ -77,7 +77,7 @@
                     <li><%= link_to "Фотогалерея", albums_path, class: "menu" %></li>
                 <% end %>
                 <li><%= link_to "Родителям", consultations_path, class: "menu" %></li>
-                <li><%= link_to "Расписание занятий", shedule_page_path, class: "menu" %></li>
+                <li><%= link_to "Расписание занятий", schedules_url, class: "menu" %></li>
                 <% if user_signed_in? %>
                     <li><%= link_to "Гостевая книга", comments_path, class: "menu" %></li>
                     <li><%= link_to "Обратная связь", contact_path, class: "menu" %></li>
@@ -114,6 +114,6 @@
 
 		  <!--<div id="footer"></div>-->
 		</div>
-		
+
 	</body>
 </html>
