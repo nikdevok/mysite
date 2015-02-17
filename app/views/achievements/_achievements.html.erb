@@ -1,0 +1,12 @@
+<% achievements.each_with_index do |achiv, i| %>
+	<% if i % 5 == 0 %>
+		</tr>
+		<tr>
+	<% end %>
+	<td class = "photo">
+        <%= link_to image_tag(achiv.img.url(:thumb), class: "img-rounded photo"), achiv.img.url, :class => "group", :alt => "", :rel => "group"  %>
+
+        <%= link_to image_tag("/images/ico-delete.gif"), achiv, :method => :delete, :confirm => "Вы уверены?" if can? :delete, achiv %>
+	</td>
+	
+<% end %>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Группа №3 &laquo;Звездочка&raquo;</title>
+  		<%= stylesheet_link_tag 'application_dou_star', :media => "all" %>
+  		
+    	<%= javascript_include_tag 'application', :media => "all" %>
+
+  		<%= csrf_meta_tags %>
+        <%= javascript_tag "var AUTH_TOKEN = '#{form_authenticity_token}';" if protect_against_forgery? %>
+	</head>
+	<body>
+	<div id="container">
+		  <div id="header">
+		    <div id = "date-now" class = "pull-right"></div>
+		    <div class = "user-text pull-left">
+		    	Приветствую Вас
+	            <% if user_signed_in? %>
+	            	<%= " #{current_user.nickname}"%>
+	            	<%= " (Администратор)" if current_user.is_admin? %>
+	            <% else %>
+	            	<%= " Гость" %>
+	            <% end %>
+          	</div>
+	          <div id = "links" class = "pull-right">
+
+			  	<% if user_signed_in? %>
+
+				   <%= link_to "Выход", destroy_user_session_path, :method => :delete, :confirm => "Вы уверены, что хотите выйти?" %>
+                    <%= link_to "Профиль", edit_user_registration_path%>
+				<% else %>
+					<%= link_to "Регистрация", new_user_registration_path %>  |
+					<%= link_to "Вход", new_user_session_path %>
+				<% end %>
+			  </div>
+		  </div>
+          
+          
+
+		  
+
+          <script type="text/javascript">window.onload = date_time('date-now');</script>
+		  <div id="wrapper">
+
+
+
+		  	<div id="extra">
+
+              <ul id = "navbar">
+                <li class = "top"><%= link_to "Главная", root_path, class: "menu" %></li>
+                <li><%= link_to "Обо мне", about_me_index_path, class: "menu" %></li>
+                <li><%= link_to "Новости", news_index_path, class: "menu" %></li>
+                <li><%= link_to "Достижения", achievements_path, class: "menu" %></li>
+                <li><%= link_to "Методическая копилка", method_files_path, class: "menu" %></li>
+                <% if user_signed_in? %>
+                  <li><%= link_to "Фотогалерея", albums_path, class: "menu" %></li>
+                <% end %>
+                <li><%= link_to "Родителям", consultations_path, class: "menu" %></li>
+                <li><%= link_to "Расписание занятий", shedule_page_path, class: "menu" %></li>
+                <% if user_signed_in? %>
+                  <li><%= link_to "Гостевая книга", comments_path, class: "menu" %></li>
+                  <li><%= link_to "Обратная связь", contact_path, class: "menu" %></li>
+                  <% if current_user.is_admin? %>
+                    <li><%= link_to "Управление доступом", admin_users_path, class: "menu" %></li>
+                  <% end %>
+                <% end %>
+		      <div id="extra-footer">&nbsp;</div>
+		      <div id="crosh">&nbsp;</div>
+		  	</div>
+            <% if flash[:notice] %>
+                <div class = "alert alert-info"><%= flash[:notice] %></div>
+            <% end %>
+            <% if flash[:error] %>
+                <div class = "alert alert-danger"><%= flash[:error] %></div>
+            <% end %>
+		    <div id="content">
+		      <%= yield %>
+		    </div>
+		  </div>
+		  <div id="navigation" style = "display:none;">
+		    <p><strong>Navigation Here</strong></p>
+		    <ul>
+		      <li><a href="http://www.free-css.com/free-css-templates">Free CSS Templates</a></li>
+		      <li><a href="http://www.free-css.com/free-css-layouts">Free CSS Layouts</a></li>
+		    </ul>
+		    <div id="navigation-footer">&nbsp;</div>
+		  </div>
+		  <div id="footer">
+		    <p></p>
+		  </div>
+		</div>
+		
+	</body>
+</html>

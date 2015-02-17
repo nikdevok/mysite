@@ -1,0 +1,469 @@
+html,body{
+	margin:0;padding:0;
+    background-color: #BFFFA7;
+    background: url("/images/fizruk544dou/bg.jpg") ;
+    background-size: 100% 100%;
+    color: #000;
+
+	height: 100%;
+}
+
+/*qq*/
+
+body{font: 76% arial,sans-serif;text-align:center}
+p{margin:0 10px 10px}
+a{padding:5px; text-decoration:none; color:#000000;}
+div#header{background-color:transparent;}
+div#header h1{height:80px;line-height:80px;margin:0;padding-left:10px;}
+div#container{text-align:left}
+div#content p{line-height:1.4}
+div#navigation{background:#F6F0E0;}
+div#navigation ul{margin:15px 0; padding:0; list-style-type:none;}
+div#navigation li{margin-bottom:5px;}
+div#extra{background:#CCC8B3; margin-top: 30px;}
+div#footer{
+
+}
+div#footer p{margin:0 auto;padding:5px 10px; width: 1000px; ;margin-top: 100px;}
+div#container{
+    margin:0 auto; width: 1240px; height: 100%;
+
+}
+
+#header-text{
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 8px;
+}
+
+
+div#basketball{
+
+    position: absolute;
+
+    background: url("/images/fizruk544dou/bg-ball.png") no-repeat;
+    height: 72px;
+    width: 70px;
+
+    background-size: 95% 95%;
+    margin-top: 280px;
+    margin-left: 1100px;
+}
+
+div#ball{
+
+    position: absolute;
+
+    background: url("/images/fizruk544dou/ball.png") no-repeat;
+    height: 100px;
+    width: 100px;
+
+    background-size: 40% 40%;
+    margin-top: 50px;
+    margin-left: 290px;
+}
+
+div#sun{
+
+    position: absolute;
+
+    background: url("/images/fizruk544dou/sun3.png") no-repeat;
+    height: 194px;
+    width: 230px;
+
+    background-size: 90% 90%;
+    margin-top: -9px;
+    margin-left: 990px;
+}
+
+
+div#football{
+
+    position: absolute;
+
+    background: url("/images/fizruk544dou/football.png") no-repeat;
+    height: 50px;
+    width: 50px;
+
+    background-size: 70% 70%;
+    margin-top: -15px;
+    margin-left: 130px;
+}
+
+div#kids1{
+    position: absolute;
+    background-image: url("/images/fizruk544dou/kid1.png");
+    height: 249px;
+    width: 214px;
+    margin-left: 1030px;
+    margin-top: 400px;
+}
+div#kids2{
+    position: absolute;
+    background-image: url("/images/fizruk544dou/kid2.png");
+    background-repeat: no-repeat;
+    background-size: 30% 30%;
+    height: 612px;
+    width: 527px;
+    margin-left: -200px;
+    margin-top: 400px;
+}
+
+div#kids3{
+    position: absolute;
+    background-image: url("/images/fizruk544dou/kid3.png");
+    background-repeat: no-repeat;
+    height: 612px;
+    width: 527px;
+    background-size: 30% 30%;
+    margin-left: 1030px;
+    
+}
+div#kids4{
+    position: absolute;
+    background-image: url("/images/fizruk544dou/kid4.png");
+    background-repeat: no-repeat;
+    background-size: 30% 30%;
+    height: 612px;
+    width: 527px;
+    margin-left: -200px;
+
+}
+
+
+div#wrapper{float:left; }
+div#content{
+	margin: 0 180px; margin-top: 30px;
+	background: rgb(252, 252, 155);
+	padding: 10px;
+	border: 2px solid green;
+	border-radius: 10px 10px 10px 10px;
+	width: 950px;
+}
+div#navigation{		
+	float:left;width:145px; margin-left: -150px; margin-top: 30px;
+	background: yellow;
+	border: 1px solid green;
+	border-radius: 10px 10px 10px 10px;
+
+}
+div#extra{
+	float:left;
+
+	border: 2px solid green;
+	border-radius: 10px 10px 10px 10px;
+	background: yellow;
+
+
+	
+	font-weight: bold;
+	
+}
+
+ul#navbar {
+	margin: 0;
+	margin-top: 0px;
+  	padding: 0;
+  	list-style-type: none;
+  	width: 160px;
+}
+
+
+
+#navbar a.menu {
+  
+  padding: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  
+  display: block;
+}
+
+#navbar li:hover {
+	background: #94C83C;
+
+}
+
+#navbar li.top:hover {
+	background: #94C83C;
+	border-radius: 10px 10px 0px 0px;
+}
+
+#navbar li {
+  padding: 2px;
+  border-bottom: 1px solid #888;
+}
+
+#navbar li a.menu:hover { 
+	
+	color: white; 
+}
+
+div#container-buffer{
+    height: 100%;
+}
+
+div#footer{
+
+	height: 200px;
+	background-image: url('/images/fizruk544dou/footer.png');
+    background-repeat: no-repeat;
+
+
+}
+
+
+
+div#extra-footer{
+	margin-left: -18px;
+	margin-bottom: -10px;
+	width: 190px;
+	height: 50px;
+	background-image: url('/images/fizruk544dou/header-footer1.png'); 
+	background-size: 100% 100%;
+}
+
+div#sova{
+	position: absolute;
+	margin-left: 110px;
+	margin-top: -40px;
+	width: 70px;
+	height: 70px;
+	background-image: url('/images/fizruk544dou/sova.png'); 
+	background-size: 100% 100%;
+	z-index: 9;
+}
+
+div#crosh{
+	position: absolute;
+	margin-left: -10px;
+	margin-top: -40px;
+	width: 70px;
+	height: 70px;
+	background-image: url('/images/fizruk544dou/crosh.png'); 
+	background-size: 100% 100%;
+	z-index: 9;
+}
+
+
+.cloud-left, .cloud-right, .cloud-center{ position: absolute; }
+
+.cloud-left {
+	top: 10px;
+}
+
+.cloud-center {
+	left: 440px;
+    top: 10px;
+}
+
+.cloud-right {
+	right: 50px;
+    top: 10px;
+}
+
+
+.cloud-left:hover{
+	background-image: url('/images/fizruk544dou/cloud-zdorovye-hover.png'); 
+	background-size: 100% 100%;
+}
+
+.cloud-center:hover{
+	background-image: url('/images/fizruk544dou/cloud-zdorovye-hover.png'); 
+	background-size: 100% 100%;
+}
+
+.cloud-right:hover{
+	background-image: url('/images/fizruk544dou/cloud-zdorovye-hover.png'); 
+	background-size: 100% 100%;
+}
+
+
+div#header {
+	height: 250px;
+	/*background-color: #AFC5F6; */ 
+	background-image: url('/images/fizruk544dou/header.jpg'); 
+	background-size: 100% 120%; 
+	border: 3px solid green;
+	border-top: none;
+	border-radius: 0px 0px 30px 30px;
+
+}
+
+.header-footer1{
+	float: left;
+	margin-top: 33px;
+	height: 70px;
+	width: 200px;
+	background-image: url('/images/fizruk544dou/header-footer1.png');
+	background-size: 100% 100%;
+	background-position: left bottom;
+	background-repeat: repeat-x;
+}
+
+
+.header-footer2{
+	float: left;
+	margin-left: -30px;
+	margin-top: 50px;
+	height: 50px;
+	width: 200px;
+	background-image: url('/images/fizruk544dou/header-footer1.png');
+	background-size: 100% 100%;
+	background-position: left bottom;
+	background-repeat: repeat-x;
+	
+}
+
+.header-footer3{
+	float: left;
+	margin-left: -30px;
+	margin-top: 43px;
+	height: 60px;
+	width: 200px;
+	background-image: url('/images/fizruk544dou/header-footer1.png');
+	background-size: 100% 100%;
+	background-position: left bottom;
+	background-repeat: repeat-x;
+	
+}
+
+.header-footer4{
+	margin-left: 400px;
+	margin-top: 50px;
+	height: 50px;
+	width: 200px;
+	background-image: url('/images/fizruk544dou/header-footer2.png');
+	background-size: 100% 100%;
+	background-position: left bottom;
+	background-repeat: repeat-x;
+	
+}
+
+.header-footer5{
+	float:left;
+	margin-left: 580px;
+	margin-top: -50px;
+	height: 50px;
+	width: 200px;
+	background-image: url('/images/fizruk544dou/header-footer2.png');
+	background-size: 100% 100%;
+	background-position: left bottom;
+	background-repeat: repeat-x;
+	
+}
+
+.header-footer6{
+	float:left;
+	margin-left: 770px;
+	margin-top: -50px;
+	height: 50px;
+	width: 200px;
+	background-image: url('/images/fizruk544dou/header-footer2.png');
+	background-size: 100% 100%;
+	background-position: left bottom;
+	background-repeat: repeat-x;
+	
+}
+
+
+.header-footer7{
+	float:left;
+	margin-left: 820px;
+	margin-top: -50px;
+	height: 50px;
+	width: 200px;
+	background-image: url('/images/fizruk544dou/header-footer2.png');
+	background-size: 100% 100%;
+	background-position: left bottom;
+	background-repeat: repeat-x;
+	
+}
+
+
+.header-footer9{
+    float:left;
+    margin-left: 1030px;
+    margin-top: -50px;
+    height: 50px;
+    width: 200px;
+    background-image: url('/images/fizruk544dou/header-footer2.png');
+    background-size: 100% 100%;
+    background-position: left bottom;
+    background-repeat: repeat-x;
+
+}
+
+.rebyata{
+	margin-left: 150px;
+	margin-top: -200px;
+	height: 250px;
+	width: 350px;
+	background-image: url('/images/fizruk544dou/rebyata.png');
+	background-size: 100% 100%;
+	background-position: left bottom;
+	background-repeat: repeat-x;
+	
+}
+
+
+.turnik{
+	margin-left: 700px;
+	margin-top: -200px;
+	height: 150px;
+	width: 150px;
+	background-image: url('/images/fizruk544dou/turnik.png');
+	background-size: 100% 100%;
+	background-position: left bottom;
+	background-repeat: repeat-x;
+	
+}
+
+
+div#menu-header {
+	position: relative;
+	height: 150px;
+	width: 1000px;
+	top: 10px;
+	left: 20px;
+}
+
+#links {
+    position: absolute;
+    margin-top: -242px;
+    margin-left: 640px;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+.user-text{
+    position: absolute;
+    margin-top: -82px;
+    margin-left: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#links a, .user-text a{
+    color: #fff;
+}
+
+#date-now {
+    position: absolute;
+    margin-top: -242px;
+    margin-left: 840px;
+	font-weight: bold;
+	color: #fff;
+}
+
+img.photo {
+    border: 1px solid black;
+}
+
+hr {
+    background-color: #000000;
+}

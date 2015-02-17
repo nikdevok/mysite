@@ -1,0 +1,40 @@
+<%= link_to "Добавить", new_news_path, class: "btn btn-success btn-xs" if can? :create, @news %>
+
+<% @news.each do |news| %>
+  <table class="eBlock" border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody>
+      <tr>
+        <td style="padding:3px;">
+          <div class="eTitle" style="text-align:left;">
+            <%= news.title %>
+          </div>
+          <div class="eMessage" style="text-align:left;clear:both;padding-top:2px;padding-bottom:2px;">
+            <%= news.body.html_safe %>
+          </div>
+          <div class="eDetails" style="clear:both;">
+            <div style="float:right">
+              
+            </div>
+
+            
+            
+            
+            <span class="e-date">
+              <span class="ed-title">
+                Дата:
+              </span> 
+              <span class="ed-value" title="00:28">
+                <%= l news.created_at, :format => :long %>
+              </span>
+            </span>
+            <% if can? :update, @news %>
+              <span class="ed-sep">  </span>
+              <%= link_to "Редактировать", edit_news_path(news), class: "btn btn-success btn-xs" %>
+              <span class="ed-sep">  </span>
+              <%= link_to "Удалить", news, :method => :delete, :confirm => "Вы уверены?", class: "btn btn-success btn-xs" %>
+            <% end %>
+          </div>
+      </tr>
+    </tbody>
+  </table>
+<% end %>

@@ -1,0 +1,28 @@
+<%= link_to 'Назад', albums_path, class: "btn btn-success btn-xs" %>
+
+<% if can? :update, @album %>
+    <%= link_to 'Редактировать альбом', edit_album_path(@album), class: "btn btn-success btn-xs" %>
+<% end %>
+
+<% if can? :delete, @album %>
+    <%= link_to 'Удалить альбом', @album, method: :delete, data: { confirm: 'Фотографии, загруженные в альбом будут удалены, вы уверены, что хотите удалить альбом? ' }, class: "btn btn-success btn-xs" %>
+    <%= link_to 'Очистить', album_clear_path(@album), method: :post, data: {confirm: "Фотографии будут удалены из альбома, вы уверены, что хотите это сделать?"}, class: "btn btn-success btn-xs" %>
+    <%= link_to 'Удалить выбранные фотографии', "#", data: {confirm: "Фотографии будут удалены из альбома, вы уверены, что хотите это сделать?"}, class: "btn btn-success btn-xs", onclick: "$('form#images-destroy-form').submit();" %>
+<% end %>
+<hr/>
+<%= form_for([@album, @album.images.build], :html=>{:multipart=>true, id: "photo-upload-form"}) do |f| %>
+      <% if can? :create, Image.new %>
+          <div class = "input-upload-file" >
+            <%= f.file_field :img, :multiple => true, :class => "photo-add form-control", id: "photo-upload", :style => "display:none;" %>
+            <%= link_to image_tag('/images/photo_upload.png'), "#", :onclick => "$('input.photo-add').click();", :title => "Нажми, чтобы выбрать фотки" %>
+          </div>
+       <% end %>
+<% end %>
+
+
+
+
+<div id = "images">
+    <%= render '/images/images', :album => @album %>
+</div>
+

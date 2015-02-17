@@ -1,0 +1,57 @@
+<div class="comment" id="comment_<%= comment.id %>">
+    <div class="comment-avatar">
+      <%= image_tag(comment.user.avatar? ? comment.user.avatar : "/images/avatar-icon.png")%>
+    </div>
+    <div class="comment-main">
+      <div class="comment-heading">
+        <%= comment.user.nickname || "Аноним" %>
+        <%= l comment.created_at, format: :long %>
+        <%= link_to "Удалить", comment, method: :delete, confirm: "Ответы тоже будут удалены, вы уверены, что хотите удалить комментарий?", class: "btn btn-danger btn-xs" if can? :destroy, comment %>
+      </div>
+      <div class="comment-body">
+        <p><%= comment.body %></p>
+        <div class="comment-actions">
+          <a onclick = "$(this).next('div.answer_link').toggle();" class = "btn btn-success btn-xs">Ответить</a>
+          <div class = "answer_link" style = "display:none; margin-top:10px;" >
+            <br/>
+            <%= form_for([comment, comment.answers.build]) do |f| %>
+                <div class = "fields">
+                  <%= f.text_area :body, rows: 10 %>
+                </div>
+                <div class = "fields">
+                  <%= f.submit 'Ответить', class: "btn btn-success btn-xs" %>
+                </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="nested-comments">
+  <% comment.answers.each do |answer| %>
+      <% next unless answer.id  %>
+      <% next unless answer.user  %>
+      <div class="comment">
+        <div class="comment-avatar">
+          <%= image_tag(comment.user.avatar || "/images/avatar-icon.png")%>
+        </div>
+        <div class="comment-main">
+          <div class="comment-heading">
+            <span class="name">
+                <%= answer.user.nickname || "Анонимно" %>
+            </span>
+            <span class="created_at">
+                <%= l answer.created_at, format: :long %>
+            </span>
+          </div>
+          <div class="comment-body">
+            <p><%= answer.body %></p>
+          </div>
+        </div>
+      </div>
+  <% end %>
+
+</div>
+
+

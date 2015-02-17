@@ -1,0 +1,11 @@
+<%= content_block(title: @static_page.page_type) do %>
+
+	<%= @static_page.body.html_safe %>
+
+
+	<% if can? :update, @static_page %>
+		<%= link_to 'Редактировать', edit_static_page_path(@static_page), class: "btn btn-success btn-xs" %>
+		<%= link_to 'Назад', root_path, class: "btn btn-success btn-xs" %>
+	<% end %>
+
+<% end %>

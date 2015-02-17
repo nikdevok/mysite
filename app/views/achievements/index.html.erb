@@ -1,0 +1,11 @@
+<div class = "actions">
+  <table>
+    <tr>
+      <%= render 'achievements', :achievements => @achievements %>
+    </tr>
+  </table>
+</div>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_achievement_path,
+            :class => 'btn btn-xs btn-success' if can? :new, Achievement %>

@@ -1,0 +1,17 @@
+<%= form_tag images_destroy_images_path, :method => :post, :id => "images-destroy-form" do %>
+    <%= hidden_field_tag "album_id", album.id %>
+    <%=submit_tag "", :hidden => true, :id => "images-destroy-submit" %>
+    <% album.images.each_with_index do |image, i| %>
+        <% next unless image.id %>
+        <div class = "photo">
+            <% if can? :destroy, image %>
+                <%= check_box_tag "image_ids[]", image.id, (params[:photo_ids] and params[:photo_ids].include?(image.id)), :multiple => true%>
+            <% end %>
+            <%= link_to image_tag("/images/ico-delete.gif"), image, :method => :delete, :confirm => "Вы уверены?" if can? :delete, image %>
+
+            <%= link_to image_tag(image.img.url(:thumb), class: "img-rounded photo"), image.img.url, :class => "group", :alt => "", :rel => "group"  %>
+
+        </div>
+    <% end %>
+<% end %>
+

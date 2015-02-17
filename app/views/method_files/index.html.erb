@@ -1,0 +1,20 @@
+
+<% @method_files.each do |method_file| %>
+   <%= method_file.descriprion %>
+   <%= link_to method_file.doc_file_name, method_file.doc.url, class: "btn-mini btn-primary btn-xs" if method_file.doc_file_name %>
+
+   <br/>
+   <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                  edit_method_file_path(method_file), :class => 'btn-mini btn-xs btn-success' if can? :edit, method_file %>
+      <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                  method_file_path(method_file),
+                  :method => :delete,
+                  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                  :class => 'btn-mini btn-xs btn-success' if can? :destroy, method_file %>
+
+<hr/>
+<% end %>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_method_file_path,
+            :class => 'btn btn-mini btn-success btn-xs' if can? :new, MethodFile %>

@@ -1,0 +1,15 @@
+<div class = "new-album-btn" style = "margin-left: 10px; width: 100px;">
+  <%= link_to 'Новый альбом', new_album_path, class: "btn btn-success btn-xs" if can? :create, @albums %>
+</div>
+<hr/>
+
+<div class = "albums" >
+  <% @albums.each do |album| %>
+      <div class = "album" >
+        <%= link_to image_tag(album.cover.url(:medium)), album_path(album) %>
+        <span class = "album-title"><%= album.title %></span>
+      </div>
+  <% end %>
+</div>
+
+

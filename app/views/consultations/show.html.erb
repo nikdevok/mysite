@@ -1,0 +1,22 @@
+<table class="eBlock" border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody>
+      <tr>
+        <td style="padding:3px;">
+          <div class="eTitle" style="text-align:left;">
+            <h3>
+              <%= @consultation.title %>
+            </h3>
+          </div>
+          <div class="eMessage" style="text-align:left;clear:both;padding-top:2px;padding-bottom:2px;">
+            <%= @consultation.body.html_safe %>
+          </div>
+          <div class="eDetails" style="clear:both;">
+        	<%= link_to 'Редактировать', edit_consultation_path(@consultation), class: "btn btn-success btn-xs" %>
+            <%= link_to "Удалить", @news, method: :delete, :data => {:confirm => "Вы уверены в этом?"}, class: "btn btn-success btn-xs" %>
+			<%= link_to 'Назад', consultations_path, class: "btn btn-success btn-xs" %>
+          </div>
+      </tr>
+    </tbody>
+  </table>
+
+

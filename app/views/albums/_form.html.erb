@@ -1,0 +1,29 @@
+<%= content_block(:title => "Новый альбом") do %>
+
+  <%= form_for(@album, {:multipart => true}) do |f| %>
+    <% if @album.errors.any? %>
+      <div id="error_explanation">
+        <h2>Вы не заполнили обязательные поля!</h2>
+
+        <ul>
+        <% @album.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :title %><br />
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <div class="field">
+      <%= f.label :cover %><br />
+      <%= f.file_field :cover, :hidden => true, :class => "photo-add", class: "form-control" %>
+      <%#= link_to image_tag('/images/photo_upload.png'), "#", :onclick => "$('input.photo-add').click();" %>
+    </div>
+    <div class="actions">
+      <%= f.submit class: "btn btn-success btn-xs" %>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,184 @@
+html,body{
+	margin:0 auto;
+	padding:0; 
+	
+	background-color: #FFD9FB;
+	background: url("/images/dou_star/bg.png") ;
+	/*background-size: 30% 10%; */
+
+	height: 100%;
+}
+
+
+body{font: 76% arial,sans-serif;text-align:center}
+p{margin:0 10px 10px}
+a{padding:5px; text-decoration:none; color:#000000;}
+div#header{background-color:transparent;}
+div#header h1{height:80px;line-height:80px;margin:0;padding-left:10px;}
+div#container{text-align:left}
+div#content p{line-height:1.4; position: relative; }
+div#navigation{background:#F6F0E0;}
+div#navigation ul{margin:15px 0; padding:0; list-style-type:none;}
+div#navigation li{margin-bottom:5px;}
+div#extra{ margin-top: 30px;}
+div#footer{
+
+}
+div#footer p{margin:0;padding:5px 10px; margin-top: 100px;}
+div#container{margin:0 auto; width: 1240px; height: 100%;}
+div#wrapper{float:left; margin-top: -10px;}
+div#content{
+	margin: 0 220px; margin-top: 30px;
+	background: white;
+	padding: 10px;
+	border: 1px solid green;
+	border-radius: 10px 10px 10px 10px;
+	box-shadow: inset 0px 0px 10px 1px #8FB3CB;
+	width: 850px;
+}
+div#navigation{		
+	float:left;width:145px; margin-left: -150px; margin-top: 30px;
+	background: yellow;
+	border: 1px solid green;
+	border-radius: 10px 10px 10px 10px;
+
+}
+div#extra{
+	float:left;
+	width:200px;
+	padding: 10px;
+	border: 1px solid green;
+	border-radius: 10px 10px 10px 10px;
+	background: #DD89FF;
+	border: 2px solid #003AA9;
+	box-shadow: inset 0px 0px 10px 1px #4C8DC0;
+	font-weight: bold;
+}
+
+ul#navbar {
+	margin: 0;
+	margin-top: 0px;
+  	padding: 0;
+  	list-style-type: none;
+
+}
+
+
+
+#navbar a.menu {
+  padding: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  
+  display: block;
+}
+
+#navbar li {
+    background: #FBC2FF;
+    border: 1px solid #DD89FF;
+    padding: 4px;
+
+}
+
+#navbar li:hover {
+	background: #FFD9FB;
+    border: 1px solid #003AA9;
+    border-radius: 3px 3px 3px 3px;
+}
+
+#navbar li.top, #navbar li.top:hover {
+    border-radius: 10px 10px 0px 0px;
+}
+
+#navbar li.bottom:hover, #navbar li.bottom   {
+    border-radius: 0px 0px 10px 10px;
+}
+
+
+#navbar li a.menu {
+  color: black;
+  
+}
+
+#navbar li a.menu:hover { 
+	
+	color: black;
+}
+
+/*div#footer{*/
+
+	/*height: 200px;*/
+	/*background-image: url('/images/header-footer1.png'); */
+	/*background-size: 100% 100%;*/
+    /*margin-top: 10px;*/
+
+
+/*}*/
+
+
+
+div#extra-footer{
+    position: absolute;
+    margin-left: 120px;
+    margin-top: -20px;
+    width: 70px;
+    height: 78px;
+    background-image: url('/images/dou_star/star.png');
+    background-size: 100% 100%;
+}
+
+
+div#header {
+	height: 303px;
+	/*background-color: #AFC5F6; */ 
+	background-image: url('/images/dou_star/header.png');
+	border: 0px solid #8FB3CB;
+	border-top: none;
+	border-radius: 0px 0px 30px 30px;
+	box-shadow: inset 0px 0px 10px 5px #8FB3CB;
+
+}
+
+
+div#menu-header {
+	position: relative;
+	height: 150px;
+	width: 1000px;
+	top: 10px;
+	left: 20px;
+}
+
+#links, .user-text{
+	font-weight: bold;
+    margin-right: 200px;
+}
+
+#date-now, .user-text, #links {
+	font-weight: bold;
+	margin-top: 11px;
+	margin-right: 20px;
+	color: white;
+}
+
+.user-text {
+	margin-left: 10px;
+}
+
+#links {
+	margin-right: 100px;
+}
+
+#links a{
+	color:  white;
+}
+
+.btn-success {
+	background-color: #8FB3CB;
+	border: 1px solid #1FB3CB;
+}
+
+.btn-success:hover {
+	background-color: #8FC3CE;
+	border: 1px solid #1FB3CB;
+}

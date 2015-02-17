@@ -1,0 +1,24 @@
+-if can? :create, User
+  = link_to "Добавить", new_admin_user_path, class: "btn btn-xs btn-primary"
+
+table.table.table-striped.table-hover
+  thead
+    tr
+      th Логин
+      th Никнейм
+      th E-mail
+      th Заходил
+      th
+  tbody
+    -@users.each do |user|
+      tr
+        td = user.login
+        td = user.nickname
+        td = user.email
+        td = l user.try(:last_sign_in_at).try(:to_datetime), format: :long if user.last_sign_in_at
+        - if can? :update, user
+          td
+            = link_to "Изменить", edit_admin_user_path(user), class: "btn btn-xs btn-primary"
+            - if !user.is_admin? and can? :destroy, user
+              =< link_to "Удалить", admin_user_path(user), method: :delete, data: {confirm: "Вы уверены, что хотите удалить пользователя #{user.login}?"},
+               class: "btn btn-xs btn-danger"

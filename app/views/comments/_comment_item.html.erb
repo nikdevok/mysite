@@ -1,0 +1,18 @@
+<div class="comment" id="comment_<%= comment.id %>">
+  <div class="comment-avatar">
+    <%= image_tag("/images/avatar-icon.png")%>
+  </div>
+  <div class="comment-main">
+    <div class="comment-heading">
+      <%= comment.user.nickname || "Аноним" %>
+      <%= l comment.created_at, format: :long %>
+      <%= link_to "Удалить", comment, method: :delete, confirm: "Ответы тоже будут удалены, вы уверены, что хотите удалить комментарий?", class: "btn btn-danger btn-xs" if can? :destroy, comment %>
+    </div>
+    <div class="comment-body">
+      <p><%= comment.body %></p>
+      <div class="comment-actions">
+        <a onclick = "$(this).next('div.answer_link').toggle();" class = "btn btn-success btn-xs">Ответить</a>
+      </div>
+    </div>
+  </div>
+</div>

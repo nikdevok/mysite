@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Сайт физкультурника детского сада</title>
+  		<%= stylesheet_link_tag 'application_fizruk544dou', :media => "all" %>
+    	<%= javascript_include_tag 'application', :media => "all" %>
+
+  		<%= csrf_meta_tags %>
+        <%= javascript_tag "var AUTH_TOKEN = '#{form_authenticity_token}';" if protect_against_forgery? %>
+		
+	</head>
+	<body>
+	<div id="container">
+
+          <div id = "basketball"></div>
+          <div id = "ball"></div>
+
+      <!--
+          <div id = "kids1"></div>
+          <div id = "kids2"></div>
+          <div id = "kids3"></div>
+          <div id = "kids4"></div> -->
+		  <div id="header">
+            <div id = "header-text">
+              ГБОУ СОШ №544 Дошкольное отделение (корпус 5)
+            </div>
+		    <div id = "menu-header">
+		    	<div class = "cloud-left"><a href = "#"><img src = '/images/fizruk544dou/cloud-fizkult1.png'/></a></div>
+		    	<div class = "cloud-center"><a href = "#"><img src = '/images/fizruk544dou/cloud-sport.png'/></a></div>
+		    	<div class = "cloud-right"><a href = "#"><img src = '/images/fizruk544dou/cloud-zdorovye.png'/></a></div>
+		    	<div id = "sun"></div>
+			</div>
+
+			<div class = "header-footer1"></div>
+			<div class = "header-footer2"></div>
+			<div class = "header-footer3"></div>
+			<div class = "header-footer4"></div>
+			<div class = "header-footer5"></div>
+			<div class = "header-footer6"></div>
+			<div class = "header-footer7"></div>
+			<div class = "header-footer8"></div>
+			<div class = "header-footer9"></div>
+			<div class = "rebyata"></div>
+			<div class = "turnik"></div>
+            <div class = "user-text pull-left">
+              <% if user_signed_in? and current_user.is_admin? %>
+                  Вы вошли как Администратор
+              <% end %>
+            </div>
+
+            <div id = "links" class = "pull-right">
+
+              <% if user_signed_in? %>
+
+                  <%= link_to "Выход", destroy_user_session_path, :method => :delete, :confirm => "Вы уверены, что хотите выйти?" %>
+                  <%= link_to "Профиль", edit_user_registration_path%>
+              <% else %>
+                  <%= link_to "Вход", new_user_session_path %>
+              <% end %>
+            </div>
+            <div id = "date-now" class = "pull-right"></div>
+		  </div>
+
+
+
+          <script type="text/javascript">window.onload = date_time('date-now');</script>
+		  <div id="wrapper">
+		  	<div id="extra">
+		  	  <div id="sova">&nbsp;</div>
+              <ul id = "navbar">
+                <li class = "top"><%= link_to "Главная", root_path, class: "menu" %></li>
+                <li><%= link_to "Давайте познакомимся", about_me_index_path, class: "menu" %></li>
+                <li><%= link_to "Новости", news_index_path, class: "menu" %></li>
+                <li><%= link_to "Достижения", achievements_path, class: "menu" %></li>
+                <li><%= link_to "Методическая копилка", method_files_path, class: "menu" %></li>
+                <% if user_signed_in? %>
+                    <li><%= link_to "Фотогалерея", albums_path, class: "menu" %></li>
+                <% end %>
+                <li><%= link_to "Родителям", consultations_path, class: "menu" %></li>
+                <li><%= link_to "Расписание занятий", shedule_page_path, class: "menu" %></li>
+                <% if user_signed_in? %>
+                    <li><%= link_to "Гостевая книга", comments_path, class: "menu" %></li>
+                    <li><%= link_to "Обратная связь", contact_path, class: "menu" %></li>
+                    <% if current_user.is_admin? %>
+                        <li><%= link_to "Управление доступом", admin_users_path, class: "menu" %></li>
+                    <% end %>
+                <% end %>
+              </ul>
+		      <div id="extra-footer">&nbsp;</div>
+		      <div id="crosh">&nbsp;</div>
+              <div id = "football">&nbsp;</div>
+              </div>
+		  	</div>
+            <% if flash[:notice] %>
+                <div class = "alert alert-info"><%= flash[:notice] %></div>
+            <% end %>
+            <% if flash[:error] %>
+                <div class = "alert alert-danger"><%= flash[:error] %></div>
+            <% end %>
+		    <div id="content">
+		      <%= yield %>
+		    </div>
+		  </div>
+		  <div id="navigation" style = "display:none;">
+		    <p><strong>Navigation Here</strong></p>
+		    <ul>
+		      <li><a href="http://www.free-css.com/free-css-templates">Free CSS Templates</a></li>
+		      <li><a href="http://www.free-css.com/free-css-layouts">Free CSS Layouts</a></li>
+		    </ul>
+		    <div id="navigation-footer">&nbsp;</div>
+		  </div>
+
+          <div id="container-buffer"></div>
+
+		  <!--<div id="footer"></div>-->
+		</div>
+		
+	</body>
+</html>

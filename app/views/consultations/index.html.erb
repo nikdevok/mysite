@@ -1,0 +1,39 @@
+<%= link_to "Добавить", new_consultation_path, class: "btn btn-success btn-xs" if can? :create, @consultations  %>
+
+<% @consultations.each do |consultation| %>
+  <table class="eBlock" border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody>
+      <tr>
+        <td style="padding:3px;">
+          <div class="eTitle" style="text-align:left;">
+            <%= consultation.title %>
+          </div>
+          <div class="eMessage" style="text-align:left;clear:both;padding-top:2px;padding-bottom:2px;">
+            <%= consultation.body.html_safe %>
+          </div>
+          <div class="eDetails" style="clear:both;">
+            <div style="float:right">
+              
+            </div>
+
+            
+            
+            
+            <span class="e-date">
+              <span class="ed-title">
+                Дата:
+              </span> 
+              <span class="ed-value" title="00:28">
+                <%= l consultation.created_at, :format => :long %>
+              </span>
+            </span>
+            <% if can? :create, consultation %>
+              <span class="ed-sep"> | </span>
+              <%= link_to "Редактировать", edit_consultation_path(consultation), class: "btn btn-success btn-xs" %>
+              <%= link_to "Удалить", consultation, method: :delete, :data => {:confirm => "Вы уверены в этом?"}, class: "btn btn-success btn-xs" %>
+            <% end %>
+          </div>
+      </tr>
+    </tbody>
+  </table>
+<% end %>

@@ -1,0 +1,27 @@
+<%= content_block( title: "Гостевая книга") do %>
+
+  <%= "Ваш комментарий будет первым" if @comments.empty?%>
+
+  <% @comments.each do |comment| %>
+    <%= render 'comment', comment: comment %>
+  <% end %>
+
+  <div class = "comments-avatar" style = "float:right;">
+    <%= image_tag "/images/comments#{["","2"].sample}.png" %>
+  </div>
+
+<div class = "eMessage" >&nbsp;</div>
+  <% if user_signed_in? %>
+    <%= form_for Comment.new do |f| %>
+      <div class = "fields">
+        <%= f.text_area :body, rows: 10 %>
+      </div>
+      <div class = "fields">
+        <%= f.submit "Добавить", class: "btn btn-success btn-xs" %>
+      </div>
+
+    <% end %>
+    
+  <% end %>
+
+<% end %>

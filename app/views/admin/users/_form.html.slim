@@ -1,0 +1,18 @@
+=simple_form_for @user, url: (@user.new_record? ? admin_users_path : admin_user_path(@user)), class: "form-horizontal", role: "form" do |f|
+  =f.error_notification
+  .form-group
+    =f.input :login
+  .form-group
+    =f.input :nickname
+  .form-group
+    =f.input :email
+  .form-group
+    =f.input :password
+  .form-group
+    =f.input :password_confirmation
+  .form-group
+    = link_to "Создать пароль", "#", class: "btn btn-xs btn-primary get_pwd"
+    =f.submit "Сохранить", class: "btn btn-xs btn-primary get_pwd"
+    = link_to "Назад", admin_users_path, class: "btn btn-xs btn-primary"
+  span Пароль:
+  span#get_pwd

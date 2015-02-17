@@ -1,0 +1,28 @@
+<%= content_block(:title => "Новое достижение") do %>
+    <%= form_for(@achievement, {:multipart => true}) do |f| %>
+        <% if @achievement.errors.any? %>
+            <div id="error_explanation">
+              <h2>Вы не заполнили обязательные поля!</h2>
+
+              <ul>
+                <% @achievement.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label :description %><br />
+          <%= f.text_area :description, class: "form-control", rows: 5 %>
+        </div>
+        <div class="field">
+            <%= f.label :img %><br />
+            <%= f.file_field :img, :hidden => true, :class => "photo-add", class: "form-control" %>
+
+        </div>
+        <div class="actions">
+            <%= f.submit class: "btn btn-success btn-xs" %>
+        </div>
+    <% end %>
+<% end %>

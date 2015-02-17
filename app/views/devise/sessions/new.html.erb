@@ -1,0 +1,33 @@
+<div class="panel panel-default" style = "width: 300px; margin: 0 auto;">
+  <div class="panel-heading">
+    <h4><%= t('.sign_in', :default => "Войти") %></h4>
+  </div>
+  <div class="panel-body">
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: "form" }) do |f| %>
+      <% if flash[:alert] %>
+          <div class = "alert alert-danger">
+            <%= flash[:alert] %>
+          </div>
+      <% end %>
+      <div class="form-group">
+        <%= f.label :login %>
+        <%= f.text_field :login, autofocus: true, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+      </div>
+      <% if devise_mapping.rememberable? %>
+        <div class="checkbox">
+          <label>
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+        </div>
+        <% end %>
+      <%= f.submit  t('.sign_in', :default => "Sign in"), class: "btn btn-success btn-xs" %>
+    <% end %>
+  </div>
+  <%= render "devise/shared/links" %>
+</div>
+

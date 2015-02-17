@@ -1,0 +1,43 @@
+<%#= content_block(:title => "Обратная связь") do %>
+
+
+    <%#= bootstrap_devise_error_messages! %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4><%= t('.sign_up', :default => "Обратная связь") %></h4>
+      </div>
+      <div class="panel-body">
+        <%= form_for @message, :url => contact_path, html: { role: "form"} do |form| %>
+            <% if @message.errors.any? %>
+                <div id="error_explanation">
+                  <h2>Проверьте введенные данные!</h2>
+                </div>
+            <% end %>
+              <div class="form-group">
+                <%= form.label "Как к Вам обращаться?" %>
+                <%= form.text_field :name, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= form.label "Группа, в которой занимается ребенок" %>
+                <%= form.text_field :group_number, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= form.label "Ваша электронная почта" %>
+                <%= form.text_field :email, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= form.label "Тема" %>
+                <%= form.text_field :subject, class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= form.label "Сообщение" %>
+                <%= form.text_area :body, class: "form-control" %>
+              </div>
+
+            <%= form.submit t('.contact', :default => "Отправить"), class: "btn btn-success btn-xs" %>
+        <% end %>
+      </div>
+    </div>
+
+<%# end %>

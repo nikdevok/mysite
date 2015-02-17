@@ -1,0 +1,26 @@
+$(document).ready(function() {
+
+    $("#edit").editable({
+        language: 'ru',
+        inlineMode: false,
+        imageUploadURL: '/upload_image',
+        imageDeleteURL: '/delete_image',
+        // Additional upload params.
+        imageUploadParams: {
+            id: 'my_editor',
+            authenticity_token: AUTH_TOKEN
+        },
+        imageDeleteParams: {
+            id: 'my_editor',
+            authenticity_token: AUTH_TOKEN
+        }
+
+    })
+    .on('editable.afterRemoveImage', function (e, editor, $img) {
+        // Set the image source to the image delete params.
+        editor.options.imageDeleteParams = {src: $img.attr('src'), authenticity_token: AUTH_TOKEN};
+
+        // Make the delete request.
+        //editor.deleteImage($img);
+    })
+});

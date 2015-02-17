@@ -1,0 +1,10 @@
+require 'zip/zip'
+require 'zip/zipfilesystem'
+class Album < ActiveRecord::Base
+    has_attached_file :cover, :styles => { :medium => "200x200", :thumb => "70x70" },
+    :convert_options => {:thumb => "-gravity center -extent 70x70"}
+  has_many :images, :dependent => :destroy
+  
+  validates :title, :presence => true  
+  
+end

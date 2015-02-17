@@ -1,0 +1,20 @@
+<%= form_for(@method_file, {:multipart => true}) do |f| %>
+  <div class="control-group">
+    <%= f.label :descriprion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :descriprion, :class => 'form-control', rows: 10  %>
+    </div>
+    <div class="controls">
+      <%= f.label :doc %><br />
+      <%= f.file_field :doc, :class => "doc-add" %>
+    </div>
+  </div>
+
+
+<hr/>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary btn-xs btn-mini' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                method_files_path, :class => 'btn btn-xs btn-success' %>
+  </div>
+<% end %>

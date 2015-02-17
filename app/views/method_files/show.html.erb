@@ -1,0 +1,22 @@
+<%- model_class = MethodFile -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt></dt>
+  <dd><%= @method_file.descriprion %></dd>
+  <dd><%= link_to @method_file.doc_file_name, @method_file.doc.url if @method_file.doc_file_name %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              method_files_path, :class => 'btn btn-success btn-xs'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_method_file_path(@method_file), :class => 'btn btn-success btn-xs' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              method_file_path(@method_file),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-success btn-xs' %>
+</div>
