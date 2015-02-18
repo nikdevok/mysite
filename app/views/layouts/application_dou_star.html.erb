@@ -3,7 +3,7 @@
 	<head>
 		<title>Группа №3 &laquo;Звездочка&raquo;</title>
   		<%= stylesheet_link_tag 'application_dou_star', :media => "all" %>
-  		
+
     	<%= javascript_include_tag 'application', :media => "all" %>
 
   		<%= csrf_meta_tags %>
@@ -34,10 +34,10 @@
 				<% end %>
 			  </div>
 		  </div>
-          
-          
 
-		  
+
+
+
 
           <script type="text/javascript">window.onload = date_time('date-now');</script>
 		  <div id="wrapper">
@@ -48,7 +48,7 @@
 
               <ul id = "navbar">
                 <li class = "top"><%= link_to "Главная", root_path, class: "menu" %></li>
-                <li><%= link_to "Обо мне", about_me_index_path, class: "menu" %></li>
+                <li><%= link_to "Обо мне", about_path, class: "menu" %></li>
                 <li><%= link_to "Новости", news_index_path, class: "menu" %></li>
                 <li><%= link_to "Достижения", achievements_path, class: "menu" %></li>
                 <li><%= link_to "Методическая копилка", method_files_path, class: "menu" %></li>
@@ -56,7 +56,7 @@
                   <li><%= link_to "Фотогалерея", albums_path, class: "menu" %></li>
                 <% end %>
                 <li><%= link_to "Родителям", consultations_path, class: "menu" %></li>
-                <li><%= link_to "Расписание занятий", shedule_page_path, class: "menu" %></li>
+                <li><%= link_to "Расписание занятий", schedules_url, class: "menu" %></li>
                 <% if user_signed_in? %>
                   <li><%= link_to "Гостевая книга", comments_path, class: "menu" %></li>
                   <li><%= link_to "Обратная связь", contact_path, class: "menu" %></li>
@@ -89,6 +89,6 @@
 		    <p></p>
 		  </div>
 		</div>
-		
+
 	</body>
 </html>
