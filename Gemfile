@@ -7,6 +7,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem "therubyracer"
 gem 'net-ssh'
+gem 'unicorn'
 
 
 # CSS
@@ -27,10 +28,12 @@ gem 'jquery-tablesorter'
 gem 'coffee-rails', '~> 4.0.0'
 
 # Deploy
-gem 'unicorn'
-gem 'capistrano', '~> 2.15.5'
-gem 'capistrano-rails', group: :development
-gem 'capistrano-rbenv', group: :development
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+end
 
 
 # Views
