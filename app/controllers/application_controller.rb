@@ -16,8 +16,8 @@ class ApplicationController < ActionController::Base
 
   #include SimpleCaptcha::ControllerHelpers
 
-  layout "application_fizruk544dou"
-  #layout "application_dou_star"
+  #layout "application_fizruk544dou"
+  layout "application_dou_star"
 
 
 
