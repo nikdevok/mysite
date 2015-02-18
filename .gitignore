@@ -19,6 +19,11 @@
 /config/*.yml
 /config/unicorn.conf.rb
 
+# deploy
+/config/deploy.rb
+/config/deploy/
+
+
 # assets
 /public/assets/
 

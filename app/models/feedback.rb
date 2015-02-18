@@ -6,6 +6,6 @@ class Feedback < ActiveRecord::Base
   validates :fio, :length => {:maximum => 100 }
   validates :message, :presence => true, :length => { :maximum => 1000 }
   validates :email, :uniqueness => true,
-                    :format     => { :with => Authentication.email_regex, :message => "Неверный формат электронной почты" }
-  
+                    :format     => { :with => %r{.+@.+\..+}, :message => "Неверный формат электронной почты" }
+
 end
